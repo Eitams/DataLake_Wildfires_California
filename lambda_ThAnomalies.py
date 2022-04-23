@@ -6,17 +6,22 @@ from io import StringIO
 import s3fs
 
 '''
-Lambda function to extract thermal anomalies data around California from NIFC api
+Lambda function to extract thermal anomalies data around California from ArcGIS api -NIFC website-
 and save in in an S3 bucket
 '''
 
 def lambda_handler(event, context):
     ## TODO implement
-    ## Thermal anomalies end point including query around California (poligon box)
+    ## Thermal anomalies end point
+    ## Setting the query results to return data points in California (poligon box)
+    ## geometry=-123.70460225718664%2C%2031.91240087268507%2C-114.10255196422095%2C%2042.0471346343454&geometryType=esriGeometryEnvelope
     EndPoint = 'https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/MODIS_Thermal_v1/FeatureServer/0/query?where=1%3D1&outFields=*&geometry=-123.70460225718664%2C%2031.91240087268507%2C-114.10255196422095%2C%2042.0471346343454&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outSR=4326&f=json'
     response = requests.get(EndPoint)  ## request data from api
     values = response.json()  ## Store json response in a variable
 
+    ########################
+    ## Preprocessing steps to convert geojson file to df
+    ########################
     ## Grouping attributes column names and geometry column names in one list
     column1 = list(values['features'][1]['attributes'].keys())
     column2 = list(values['features'][1]['geometry'].keys())
@@ -48,7 +53,6 @@ def lambda_handler(event, context):
 
     ## Option 2:
     bytes_to_write = df_top300.to_csv(None).encode()
-    fs = s3fs.S3FileSystem()
     fs = s3fs.S3FileSystem()
     with fs.open('s3://eswf1/ThAnomalies3.csv', 'wb') as f:
         f.write(bytes_to_write)
