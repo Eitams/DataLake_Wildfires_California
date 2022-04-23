@@ -1,0 +1,28 @@
+Interesting documentation:
+
+A)
+Query builder:
+The following URL consist in a weather query with:
+*Location: Los Angeles, CA
+*Date: 01.03.2022, 01.04.2022 (today:23.03.2022)
+*Unit: metrics
+*Include: historical observations (obs), forecast as history (histfcst), forecast (fcst), statistical forecast (stats), current conditions (current)
+
+URL:
+https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Los%20Angeles?unitGroup=metric&key=Z3Z4Q9PHE3MSXWKUPQNQ8434D&include=obs%2Cfcst%2Cstats%2Chours%2Ccurrent%2Chistfcst
+----------------------------------------------------------
+
+B)
+API Documentation
+https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/
+----------------------------------------------------------
+
+C)
+ODATA query:
+https://www.visualcrossing.com/resources/documentation/weather-api/how-do-i-retrieve-weather-data-using-an-odata-request/
+---------------------------------------------------------
+
+D)
+Load Data from API to database (SQL)
+https://www.visualcrossing.com/resources/blog/how-to-import-weather-data-into-mysql/
+
