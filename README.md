@@ -21,3 +21,6 @@ We have decided to study Wildfires in California, the overallo goal is to provid
 
 **utils.py:** function used to build API query and extract information from JSON files, used in <historical_weather_data.py'>
 
+**Drought_history.ipynb:** Jupyter Notebook for loading historical drought indices data from API to RDS table.
+
+**Wildfire_History.ipynb:** Jupyter Notebook for loading historical wildfires data from ArcGIS API to RDS table.
