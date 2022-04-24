@@ -27,4 +27,4 @@ We have decided to study Wildfires in California, the overallo goal is to provid
 
 **credentialsForrer.json:** JSON file with AWS access point
 
-**.env:** dotenv file, supposed to be in the .gitignore but for access purposes, it's displayed
+**.env:** not displayed for security reason, contact me for access
