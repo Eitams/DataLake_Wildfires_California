@@ -6,6 +6,13 @@ This project has been divided into two distinct phases. The initial phase focuse
 ## Goal
 Our chosen focus of study is Wildfires in California. The ultimate objective is to create a real-time visualization tool that serves as a valuable resource for decision-makers and first responders. This tool will incorporate comprehensive data, including information on ongoing fires, thermal anomalies, as well as predictions and projections. The data lake is constructed with two pipelines: the historical pipeline, which includes data on past wildfires, weather patterns, and drought, and the real-time pipeline, which captures data on current thermal anomalies and weather conditions. Our goal is to develop a predictive model using machine learning concepts to forecast the progression of wildfires, such as estimating the magnitude of a fire based on the prevailing weather conditions.
 
+## Real time pipeline
+![image](https://github.com/Eitams/DataLake_Wildfires_California/assets/62335786/40086811-62e4-4111-b13d-c5012c4d8961)
+
+## Historical data pipeline
+![image](https://github.com/Eitams/DataLake_Wildfires_California/assets/62335786/7417eea7-3a68-4a64-96f0-89cadfbada2c)
+
+
 ## GitHub content
 
 **aws_lambda:** Folder contain lambda function to process and load data. Those files are supposed to run only in AWS. There is environment variables and other functions, only declared in the AWS environment. Therfore, it is impossible to run those files, it is only for information purposes. 
